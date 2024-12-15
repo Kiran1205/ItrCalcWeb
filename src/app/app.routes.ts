@@ -21,7 +21,11 @@ export const routes: Routes = [
       {
         path: 'pages',
         loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
-      }
+      },
+      {
+        path: 'access',
+        loadChildren: () => import('./views/accessmanagement/routes').then((m) => m.routes)
+      }      
     ]
   },
   {
@@ -52,5 +56,6 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
-  { path: '**', redirectTo: 'dashboard' }
+
+  { path: '**', redirectTo: 'login' }
 ];
